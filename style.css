@@ -15,21 +15,27 @@ body, html{
     margin:0;
 }
 
+*{
+    transition: transform .3s ease;
+}
+
 body{
     font-size: 2vh;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 1fr 5fr;
     gap:0;
-    
+    background-color: beige;
 }
 a{
     text-decoration: none;
     color: inherit;
 }
+a:hover{
+    text-shadow: -1px 1px 8px #ffffff98, 1px -1px 8px #ffffff98;;
+}
 #search{
     border-radius: 5vh;
-    padding-left:1.5vh;
 }
 #search-input{
     background-color: var(--light-bg);
@@ -46,7 +52,7 @@ a{
     padding: 5vh;
     display: grid;
     grid-template-columns: repeat(auto-fit, 40vh);
-    grid-template-rows: repeat(2, 45%);
+    grid-template-rows: repeat(auto-fit, 45%);
     gap: 5vh;
 }
 .card{
@@ -63,8 +69,9 @@ a{
     align-items: center;
     
 }
-a:hover,.card:hover{
+a:hover,.card:hover, button:hover{
     transform: translateY(-.5vh);
+
 }
 
 .night{
@@ -190,4 +197,31 @@ button.splash{
 hr{
     width: 85%;
 
+}
+
+
+
+@media only screen and ( max-aspect-ratio: 3/2 ) {
+    .hide-me{
+        visibility: hidden;
+        display: none;
+    }    
+    .sidebar{
+        padding: 0;
+        align-items: center;
+    }
+    .big{
+        font-size: 1vh;
+    }
+    .headOne, .headTwo{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .headOne > * , .headTwo > * {
+
+    }
+    #user{
+        justify-content: flex-start;
+    }
 }
